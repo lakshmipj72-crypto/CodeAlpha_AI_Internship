@@ -1,0 +1,12 @@
+* { box-sizing: border-box; }
+body { margin:0; font-family:Arial,sans-serif; background:#f3f6fb; color:#182230; }
+.container { max-width:850px; margin:50px auto; padding:20px; }
+h1 { margin-bottom:8px; }
+.sub { color:#5d6877; }
+.card { background:white; padding:28px; border-radius:16px; box-shadow:0 8px 30px rgba(0,0,0,.08); }
+label { display:block; margin:16px 0 7px; font-weight:700; }
+select, textarea { width:100%; padding:12px; border:1px solid #cfd6df; border-radius:10px; font-size:15px; }
+textarea { resize:vertical; }
+button { margin-top:18px; padding:12px 18px; border:0; border-radius:10px; cursor:pointer; font-weight:700; background:#2563eb; color:white; }
+button.secondary { background:#475569; margin-left:8px; }
+#status { min-height:22px; color:#475569; }

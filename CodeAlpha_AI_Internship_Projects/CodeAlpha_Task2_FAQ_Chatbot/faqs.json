@@ -1,0 +1,36 @@
+{
+  "faqs": [
+    {
+      "question": "What is CodeAlpha?",
+      "answer": "CodeAlpha is a software development company that provides internship opportunities and technology projects."
+    },
+    {
+      "question": "How do I submit my internship task?",
+      "answer": "Upload the complete source code to GitHub, share the required project video and repository link, and submit the completed task through the submission form provided in your WhatsApp group."
+    },
+    {
+      "question": "How many tasks are required?",
+      "answer": "The internship instructions say to complete any 2 or 3 tasks from the four tasks listed for the Artificial Intelligence domain."
+    },
+    {
+      "question": "What is a language translation tool?",
+      "answer": "It is an application that accepts text, sends it to a translation service, and displays the translated result in a selected target language."
+    },
+    {
+      "question": "What is cosine similarity?",
+      "answer": "Cosine similarity measures how similar two text vectors are by comparing the angle between them. It is useful for matching a user's question with the most similar FAQ."
+    },
+    {
+      "question": "What is NLP?",
+      "answer": "Natural Language Processing is a field of AI that enables computers to process and understand human language."
+    },
+    {
+      "question": "Can I use a chatbot interface?",
+      "answer": "Yes. A simple chat interface can be added so users can type questions and receive the best matching FAQ answer."
+    },
+    {
+      "question": "What happens if there is no matching FAQ?",
+      "answer": "The chatbot should return a fallback response asking the user to rephrase the question or ask another supported question."
+    }
+  ]
+}

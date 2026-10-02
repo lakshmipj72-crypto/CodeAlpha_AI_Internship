@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Language Translation Tool</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main class="container">
+    <h1>🌍 AI Language Translation Tool</h1>
+    <p class="sub">Translate text between multiple languages.</p>
+
+    <section class="card">
+      <label for="source">Source language</label>
+      <select id="source">
+        {% for name, code in languages.items() %}
+        <option value="{{ code }}" {% if code == "en" %}selected{% endif %}>{{ name }}</option>
+        {% endfor %}
+      </select>
+
+      <label for="target">Target language</label>
+      <select id="target">
+        {% for name, code in languages.items() %}
+        <option value="{{ code }}" {% if code == "te" %}selected{% endif %}>{{ name }}</option>
+        {% endfor %}
+      </select>
+
+      <label for="inputText">Enter text</label>
+      <textarea id="inputText" rows="6" placeholder="Type something here..."></textarea>
+
+      <button id="translateBtn">Translate</button>
+      <button id="copyBtn" class="secondary">Copy result</button>
+
+      <label for="outputText">Translated text</label>
+      <textarea id="outputText" rows="6" readonly placeholder="Translation will appear here..."></textarea>
+      <p id="status"></p>
+    </section>
+  </main>
+  <script>
+    const input = document.getElementById("inputText");
+    const output = document.getElementById("outputText");
+    const status = document.getElementById("status");
+
+    document.getElementById("translateBtn").onclick = async () => {
+      const text = input.value.trim();
+      if (!text) { status.textContent = "Enter some text first."; return; }
+      status.textContent = "Translating...";
+      try {
+        const res = await fetch("/translate", {
+          method: "POST",
+          headers: {"Content-Type": "application/json"},
+          body: JSON.stringify({
+            text,
+            source: document.getElementById("source").value,
+            target: document.getElementById("target").value
+          })
+        });
+        const data = await res.json();
+        if (!res.ok) throw new Error(data.error || "Translation failed.");
+        output.value = data.translatedText;
+        status.textContent = "Translation complete.";
+      } catch (err) {
+        status.textContent = err.message;
+      }
+    };
+
+    document.getElementById("copyBtn").onclick = async () => {
+      if (!output.value) return;
+      await navigator.clipboard.writeText(output.value);
+      status.textContent = "Copied to clipboard.";
+    };
+  </script>
+</body>
+</html>

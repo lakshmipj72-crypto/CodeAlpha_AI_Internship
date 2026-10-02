@@ -1,0 +1,9 @@
+body{margin:0;background:#eef2f7;font-family:Arial,sans-serif;color:#182230}
+.chat{max-width:800px;margin:45px auto;padding:20px}
+.messages{height:430px;overflow:auto;background:white;border-radius:16px;padding:18px;box-shadow:0 8px 30px rgba(0,0,0,.08)}
+.bot,.user{padding:12px 14px;margin:10px 0;border-radius:12px;max-width:80%}
+.bot{background:#eef4ff}.user{background:#e8f7ee;margin-left:auto}
+small{display:block;margin-top:7px;color:#64748b}
+.input-row{display:flex;gap:10px;margin-top:15px}
+input{flex:1;padding:14px;border:1px solid #cbd5e1;border-radius:10px}
+button{padding:14px 22px;border:0;border-radius:10px;background:#2563eb;color:white;font-weight:bold;cursor:pointer}
